@@ -6,7 +6,8 @@ OT 특강
 완료한 것이 완벽한 것 보다 낫다! 너무 완벽해 지려고는 안해도 된다.
 퍼펙트로 향해 가는 것 자체가 중요하다
 
-![IMG_1775](https://github.com/user-attachments/assets/6190abfd-63b5-4748-8ee5-97ef788b8341)
+<img src="https://github.com/user-attachments/assets/6190abfd-63b5-4748-8ee5-97ef788b8341" width="400" height="400"/>
+
 Great도 충분하다
 
 ---
@@ -14,7 +15,8 @@ Great도 충분하다
 Mvp 란? 핵심 기능을 만들어 내는 것
 ex) 말이 없는 마차
 ex) 해커톤을 하는데 로그인 기능이 꼭 필요할까?
-![IMG_1771](https://github.com/user-attachments/assets/e7b0f7ce-f81d-481b-b2f5-41d9faa46901)
+
+<img src="https://github.com/user-attachments/assets/e7b0f7ce-f81d-481b-b2f5-41d9faa46901" width="400" height="400"/>
 
 MVP 의 M은 미니엄을 뜻한다고
 시간이 적게 걸리는가?
@@ -29,7 +31,8 @@ MVP 의 M은 미니엄을 뜻한다고
 ---
 
 성장은 병렬로 진행하라
-[IMG_1773](https://github.com/user-attachments/assets/ae1aae0c-bf6d-4b0f-8363-55a664ff21be)
+
+<img src="https://github.com/user-attachments/assets/ae1aae0c-bf6d-4b0f-8363-55a664ff21be" width="400" height="400"/>
 
 ---
 
@@ -61,7 +64,7 @@ MVP 의 M은 미니엄을 뜻한다고
 몰입터널을 아슬아슬하게 통과하라
 -> 난이도를 높여가되 자신의 역량 근처로
 
-![IMG_1777](https://github.com/user-attachments/assets/3e503c39-06e7-43f7-bda2-b557525f0975)
+<img src="https://github.com/user-attachments/assets/3e503c39-06e7-43f7-bda2-b557525f0975" width="400" height="400"/>
 
 만약 교육과정 중 난이도가 쉽거나 어렵다면?
 
