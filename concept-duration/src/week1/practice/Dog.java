@@ -1,4 +1,4 @@
-package practice;
+package week1.practice;
 
 class Dog extends Animal {
     public Dog(String name) {
