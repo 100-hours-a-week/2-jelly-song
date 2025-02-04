@@ -1,13 +1,15 @@
 package week2.practice;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 class Counter {
-    private int value = 0;
+    private AtomicInteger value = new AtomicInteger(0);
 
     public synchronized void increment() {
-        value++;
+        value.incrementAndGet();
     }
 
     public int getValue() {
-        return value;
+        return value.get();
     }
 }
