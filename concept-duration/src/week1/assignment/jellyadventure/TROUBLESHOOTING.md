@@ -50,9 +50,13 @@ From https://github.com/100-hours-a-week/2-jelly-song
 3. 원격 브랜치(origin/main)의 최신 커밋을 내 로컬 main 브랜치에 적용
 4. 저장해둔 내 변경 사항을 원격 변경 사항 위에 다시 적용
 
-#### ++ rebase vs merge 개념
+#### ++ rebase vs merge
 
 1. Git에서 한 브랜치에서 다른 브랜치로 합치는 방법은 Merge와 Rebase다.
 2. Merge와 Rebase의 실행결과는 같지만 커밋 히스토리가 달라진다.
 3. Merge는 쉽고 안전하지만 커밋히스토리가 지저분할 수 있다 반면 Rebase는 잘 모르고 사용할 경우 위험할 수 있어 까다롭지만 커밋히스토리를 깔끔하게 관리할 수 있다.
 4. Rebase는 base를 새롭게 설정한다는 의미로 이해하면 좋다.
+
+#### 설정
+- git pull 명령을 실행할 때 기본적으로 --rebase 옵션이 적용되도록 pull.rebase 설정을 추가할 수 있다.
+- git config --global pull.rebase true 명령으로 추가한다.
