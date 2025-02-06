@@ -1,4 +1,4 @@
-package week1.assignment.jellyadventure.domain.character;
+package week1.assignment.jellyadventure.domain;
 
 public abstract class Character {
     private Integer maxHp;

@@ -1,4 +1,6 @@
-package week1.assignment.jellyadventure.domain.character.Monster;
+package week1.assignment.jellyadventure.domain.monster;
+
+import week1.assignment.jellyadventure.domain.Monster;
 
 public class Balrog extends Monster {
     private static final Integer BALROG_HP = 200;

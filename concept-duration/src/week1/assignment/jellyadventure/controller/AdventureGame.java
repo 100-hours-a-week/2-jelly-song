@@ -1,11 +1,11 @@
 package week1.assignment.jellyadventure.controller;
 
 import java.util.Scanner;
-import week1.assignment.jellyadventure.domain.character.Monster.Balrog;
-import week1.assignment.jellyadventure.domain.character.Monster.Goblin;
-import week1.assignment.jellyadventure.domain.character.Monster.Monster;
-import week1.assignment.jellyadventure.domain.character.Monster.Slime;
-import week1.assignment.jellyadventure.domain.character.Player;
+import week1.assignment.jellyadventure.domain.monster.Balrog;
+import week1.assignment.jellyadventure.domain.monster.Goblin;
+import week1.assignment.jellyadventure.domain.Monster;
+import week1.assignment.jellyadventure.domain.monster.Slime;
+import week1.assignment.jellyadventure.domain.Player;
 
 public class AdventureGame {
     Scanner scanner = new Scanner(System.in);
