@@ -11,10 +11,10 @@ public abstract class Character {
         this.power = power;
     }
     public void attack(Character target) {
-        target.isDamaged(power);
+        target.takeDamaged(power);
     }
 
-    private void isDamaged(Integer enemyPower) {
+    private void takeDamaged(Integer enemyPower) {
         hp = hp - enemyPower;
         if (isHpMinus()) {
             hp = 0;
