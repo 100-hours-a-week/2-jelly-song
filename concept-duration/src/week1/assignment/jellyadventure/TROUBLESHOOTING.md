@@ -60,3 +60,8 @@ From https://github.com/100-hours-a-week/2-jelly-song
 #### 설정
 - git pull 명령을 실행할 때 기본적으로 --rebase 옵션이 적용되도록 pull.rebase 설정을 추가할 수 있다.
 - git config --global pull.rebase true 명령으로 추가한다.
+
+#### 추가
+- git pull을 할 때 로컬에 unstaged 상태의 변경사항이 있어서 git pull --rebase가 먹히지 않는 현상이 발생했다.
+- 그 변경 사항을 따로 빼놓은 뒤 pull 하여 해결하였다.
+- 따로 빼는 방법은 stash를 사용하면 된다.
