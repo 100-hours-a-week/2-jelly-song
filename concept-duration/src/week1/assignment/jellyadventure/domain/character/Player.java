@@ -1,4 +1,4 @@
-package week1.assignment.jellyadventure.domain;
+package week1.assignment.jellyadventure.domain.character;
 
 public class Player extends Character {
     private static final Integer INITIAL_PLAYER_HP = 100;

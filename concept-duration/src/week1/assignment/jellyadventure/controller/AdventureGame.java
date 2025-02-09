@@ -1,9 +1,9 @@
 package week1.assignment.jellyadventure.controller;
 
 import java.util.Scanner;
-import week1.assignment.jellyadventure.domain.Monster;
+import week1.assignment.jellyadventure.domain.character.Monster;
 import week1.assignment.jellyadventure.domain.menu.BattleContinueMenu;
-import week1.assignment.jellyadventure.domain.Player;
+import week1.assignment.jellyadventure.domain.character.Player;
 import week1.assignment.jellyadventure.domain.menu.MainMenu;
 
 public class AdventureGame {
@@ -55,12 +55,8 @@ public class AdventureGame {
         Monster curMonster = MainMenu.changeToMonster(mainMenu); // 변경 요망
 
         while (player.isAlive() && curMonster.isAlive()) {
-            player.attack(curMonster);
-            curMonster.attack(player);
-            System.out.println("<<배틀 결과>>");
-            player.printStatus();
-            curMonster.printStatus();
-            System.out.println();
+            battleEachOther(player, curMonster);
+            printBattleResult(player, curMonster);
 
             if (player.isAlive() && curMonster.isAlive()) {
                 System.out.println("도망 가시겠습니까? 1.예 2.아니오");
@@ -74,6 +70,18 @@ public class AdventureGame {
         }
     }
 
+    private static void printBattleResult(Player player, Monster curMonster) {
+        System.out.println("<<배틀 결과>>");
+        player.printStatus();
+        curMonster.printStatus();
+        System.out.println();
+    }
+
+    private static void battleEachOther(Player player, Monster curMonster) {
+        player.attack(curMonster);
+        curMonster.attack(player);
+    }
+
     private Integer getIntegerFromUserByRange(Integer start, Integer end) {
         Integer select = 0;
         while (true) {
@@ -85,6 +93,7 @@ public class AdventureGame {
 
             if (!(start <= select && select <= end)) {
                 System.out.println("**" + start + "부터 " + end + "까지 중 숫자 하나를 입력해 주세요!**");
+                continue;
             }
 
             if (start <= select && select <= end) {

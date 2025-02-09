@@ -1,10 +1,10 @@
 package week1.assignment.jellyadventure.domain.menu;
 
 import java.util.Arrays;
-import week1.assignment.jellyadventure.domain.Monster;
-import week1.assignment.jellyadventure.domain.monster.Balrog;
-import week1.assignment.jellyadventure.domain.monster.Goblin;
-import week1.assignment.jellyadventure.domain.monster.Slime;
+import week1.assignment.jellyadventure.domain.character.Monster;
+import week1.assignment.jellyadventure.domain.character.monster.Balrog;
+import week1.assignment.jellyadventure.domain.character.monster.Goblin;
+import week1.assignment.jellyadventure.domain.character.monster.Slime;
 
 public enum MainMenu {
     NONE(0, null), BATTLE_SLIME(1, new Slime()), BATTLE_BALROG(2, new Balrog()),

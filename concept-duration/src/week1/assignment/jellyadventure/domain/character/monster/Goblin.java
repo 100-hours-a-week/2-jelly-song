@@ -1,6 +1,6 @@
-package week1.assignment.jellyadventure.domain.monster;
+package week1.assignment.jellyadventure.domain.character.monster;
 
-import week1.assignment.jellyadventure.domain.Monster;
+import week1.assignment.jellyadventure.domain.character.Monster;
 
 public class Goblin extends Monster {
     private static final Integer GOBLIN_HP = 50;

@@ -1,4 +1,4 @@
-package week1.assignment.jellyadventure.domain;
+package week1.assignment.jellyadventure.domain.character;
 
 public abstract class Monster extends Character {
     private Integer exp;
