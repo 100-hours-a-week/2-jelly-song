@@ -2,10 +2,9 @@ package week1.assignment.jellyadventure.controller;
 
 import java.util.Scanner;
 import week1.assignment.jellyadventure.domain.Monster;
-import week1.assignment.jellyadventure.domain.monster.Balrog;
-import week1.assignment.jellyadventure.domain.monster.Goblin;
-import week1.assignment.jellyadventure.domain.monster.Slime;
+import week1.assignment.jellyadventure.domain.menu.BattleContinueMenu;
 import week1.assignment.jellyadventure.domain.Player;
+import week1.assignment.jellyadventure.domain.menu.MainMenu;
 
 public class AdventureGame {
     Scanner scanner = new Scanner(System.in);
@@ -17,43 +16,43 @@ public class AdventureGame {
             printPlayerSelectMenu();
             player.printStatus();
 
-            Menu menu = selectMenu();
-            if (isNoBattleMenu(menu)) {
-                processNoBattleMenu(menu, player);
+            MainMenu mainMenu = selectMenu();
+            if (isNoBattleMenu(mainMenu)) {
+                processNoBattleMenu(mainMenu, player);
                 continue;
             }
 
-            battle(player, menu);
+            battle(player, mainMenu);
         }
         printEndDescription();
     }
 
-    private static boolean isNoBattleMenu(Menu menu) {
-        if (menu.equals(Menu.EXERCISE) || menu.equals(Menu.REST)) {
+    private static boolean isNoBattleMenu(MainMenu mainMenu) {
+        if (mainMenu.equals(MainMenu.EXERCISE) || mainMenu.equals(MainMenu.REST)) {
             return true;
         }
         return false;
     }
 
-    private static boolean processNoBattleMenu(Menu menu, Player player) {
-        if (menu.equals(Menu.EXERCISE)) {
+    private static boolean processNoBattleMenu(MainMenu mainMenu, Player player) {
+        if (mainMenu.equals(MainMenu.EXERCISE)) {
             player.exercise();
             return true;
         }
-        if (menu.equals(Menu.REST)) {
+        if (mainMenu.equals(MainMenu.REST)) {
             player.rest();
             return true;
         }
         return false;
     }
 
-    private Menu selectMenu() {
+    private MainMenu selectMenu() {
         Integer select = getIntegerFromUserByRange(1,5);;
-        return Menu.changeToMenu(select);
+        return MainMenu.changeToMenu(select);
     }
 
-    private void battle(Player player, Menu menu) {
-        Monster curMonster = Menu.changeToMonster(menu); // 변경 요망
+    private void battle(Player player, MainMenu mainMenu) {
+        Monster curMonster = MainMenu.changeToMonster(mainMenu); // 변경 요망
 
         while (player.isAlive() && curMonster.isAlive()) {
             player.attack(curMonster);
@@ -66,7 +65,8 @@ public class AdventureGame {
             if (player.isAlive() && curMonster.isAlive()) {
                 System.out.println("도망 가시겠습니까? 1.예 2.아니오");
                 Integer select = getIntegerFromUserByRange(1,2);
-                if (select == 1) {
+                BattleContinueMenu selectMenu = BattleContinueMenu.getFrom(select);
+                if (selectMenu == BattleContinueMenu.YES) {
                     break;
                 }
             }
@@ -117,34 +117,4 @@ public class AdventureGame {
         System.out.println("1. 슬라임, 2. 고블린, 3. 발록, 4. 운동하기, 5. 휴식하기");
     }
 
-    enum Menu {
-        NONE, BATTLE_SLIME, BATTLE_BALROG, BATTLE_GOBLIN, EXERCISE, REST, YES, NO;
-
-        static Monster changeToMonster(Menu menu) {
-            if (menu.equals(Menu.BATTLE_SLIME)) {
-                return new Slime();
-            } else if (menu.equals(Menu.BATTLE_GOBLIN)) {
-                return new Goblin();
-            } else if (menu.equals(Menu.BATTLE_BALROG)) {
-                return new Balrog();
-            } else {
-                return null;
-            }
-        }
-
-         static Menu changeToMenu(Integer number) {
-            if (number == 1) {
-                return Menu.BATTLE_SLIME;
-            } else if (number == 2) {
-                return Menu.BATTLE_GOBLIN;
-            } else if (number == 3) {
-                return Menu.BATTLE_BALROG;
-            } else if (number == 4) {
-                return Menu.EXERCISE;
-            } else if (number == 5) {
-                return Menu.REST;
-            }
-            return Menu.NONE;
-        }
-    }
 }
