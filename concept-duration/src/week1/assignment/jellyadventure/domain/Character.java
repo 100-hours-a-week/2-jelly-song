@@ -1,9 +1,9 @@
 package week1.assignment.jellyadventure.domain;
 
 public abstract class Character {
-    private Integer maxHp;
-    private Integer hp;
-    private Integer power;
+    protected Integer maxHp;
+    protected Integer hp;
+    protected Integer power;
 
     public Character(Integer hp, Integer power) {
         this.maxHp = hp;
@@ -30,14 +30,8 @@ public abstract class Character {
     }
 
     public void printStatus() {
-        System.out.println(getClass().getSimpleName() + "의 상태: HP:" + hp + " POWER:" + power );
+        System.out.println(getClass().getSimpleName() + "의 상태: MAX_HP: " + maxHp +
+                " HP:" + hp + " POWER:" + power);
     }
 
-    public void rest() {
-        hp = maxHp;
-    }
-
-    public void exercise() {
-        power += 1;
-    }
 }

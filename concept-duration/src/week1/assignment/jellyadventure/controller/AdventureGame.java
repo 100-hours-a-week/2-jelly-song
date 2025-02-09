@@ -1,9 +1,9 @@
 package week1.assignment.jellyadventure.controller;
 
 import java.util.Scanner;
+import week1.assignment.jellyadventure.domain.Monster;
 import week1.assignment.jellyadventure.domain.monster.Balrog;
 import week1.assignment.jellyadventure.domain.monster.Goblin;
-import week1.assignment.jellyadventure.domain.Monster;
 import week1.assignment.jellyadventure.domain.monster.Slime;
 import week1.assignment.jellyadventure.domain.Player;
 
@@ -14,39 +14,47 @@ public class AdventureGame {
 
         printStartDescription();
         while (player.isAlive()) {
-            printPlayerSelectMenu(player);
-            Monster curMonster = selectMenu(player);
-            if (curMonster == null) {
+            printPlayerSelectMenu();
+            player.printStatus();
+
+            Menu menu = selectMenu();
+            if (isNoBattleMenu(menu)) {
+                processNoBattleMenu(menu, player);
                 continue;
             }
-            battle(player, curMonster);
+
+            battle(player, menu);
         }
         printEndDescription();
     }
 
-    private Monster selectMenu(Player player) {
-        int select = scanner.nextInt();
-        Monster curMonster = null;
-        if (select == 1) {
-            curMonster = new Slime();
-        } else if (select == 2) {
-            curMonster = new Goblin();
-        } else if (select == 3) {
-            curMonster = new Balrog();
-        } else if (select == 4) {
-            player.exercise();
-            return null;
-        } else if (select == 5) {
-            player.rest();
-            return null;
-        } else {
-            System.out.println("잘못된 선택입니다 다시 선택하세요");
-            return null;
+    private static boolean isNoBattleMenu(Menu menu) {
+        if (menu.equals(Menu.EXERCISE) || menu.equals(Menu.REST)) {
+            return true;
         }
-        return curMonster;
+        return false;
     }
 
-    private void battle(Player player, Monster curMonster) {
+    private static boolean processNoBattleMenu(Menu menu, Player player) {
+        if (menu.equals(Menu.EXERCISE)) {
+            player.exercise();
+            return true;
+        }
+        if (menu.equals(Menu.REST)) {
+            player.rest();
+            return true;
+        }
+        return false;
+    }
+
+    private Menu selectMenu() {
+        Integer select = getIntegerFromUserByRange(1,5);;
+        return Menu.changeToMenu(select);
+    }
+
+    private void battle(Player player, Menu menu) {
+        Monster curMonster = Menu.changeToMonster(menu); // 변경 요망
+
         while (player.isAlive() && curMonster.isAlive()) {
             player.attack(curMonster);
             curMonster.attack(player);
@@ -57,13 +65,43 @@ public class AdventureGame {
 
             if (player.isAlive() && curMonster.isAlive()) {
                 System.out.println("도망 가시겠습니까? 1.예 2.아니오");
-                int select = scanner.nextInt();
+                Integer select = getIntegerFromUserByRange(1,2);
                 if (select == 1) {
                     break;
                 }
             }
 
         }
+    }
+
+    private Integer getIntegerFromUserByRange(Integer start, Integer end) {
+        Integer select = 0;
+        while (true) {
+            String next = scanner.next();
+            if (!validateNumber(next)) {
+                continue;
+            }
+            select = Integer.parseInt(next);
+
+            if (!(start <= select && select <= end)) {
+                System.out.println("**" + start + "부터 " + end + "까지 중 숫자 하나를 입력해 주세요!**");
+            }
+
+            if (start <= select && select <= end) {
+                break;
+            }
+        }
+        return select;
+    }
+
+    private static Boolean validateNumber(String next) {
+        try {
+            Integer.parseInt(next);
+        } catch (NumberFormatException numberFormatException) {
+            System.out.println("**숫자를 입력해 주세요!**");
+            return false;
+        }
+        return true;
     }
 
     private static void printEndDescription() {
@@ -74,9 +112,39 @@ public class AdventureGame {
         System.out.println("****모험을 시작합니다****");
     }
 
-    private static void printPlayerSelectMenu(Player player) {
+    private static void printPlayerSelectMenu() {
         System.out.println("어떤 몬스터와 싸우시겠습니까?");
         System.out.println("1. 슬라임, 2. 고블린, 3. 발록, 4. 운동하기, 5. 휴식하기");
-        player.printStatus();
+    }
+
+    enum Menu {
+        NONE, BATTLE_SLIME, BATTLE_BALROG, BATTLE_GOBLIN, EXERCISE, REST, YES, NO;
+
+        static Monster changeToMonster(Menu menu) {
+            if (menu.equals(Menu.BATTLE_SLIME)) {
+                return new Slime();
+            } else if (menu.equals(Menu.BATTLE_GOBLIN)) {
+                return new Goblin();
+            } else if (menu.equals(Menu.BATTLE_BALROG)) {
+                return new Balrog();
+            } else {
+                return null;
+            }
+        }
+
+         static Menu changeToMenu(Integer number) {
+            if (number == 1) {
+                return Menu.BATTLE_SLIME;
+            } else if (number == 2) {
+                return Menu.BATTLE_GOBLIN;
+            } else if (number == 3) {
+                return Menu.BATTLE_BALROG;
+            } else if (number == 4) {
+                return Menu.EXERCISE;
+            } else if (number == 5) {
+                return Menu.REST;
+            }
+            return Menu.NONE;
+        }
     }
 }

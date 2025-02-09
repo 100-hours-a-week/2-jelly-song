@@ -1,9 +1,13 @@
 package week1.assignment.jellyadventure.domain;
 
-import week1.assignment.jellyadventure.domain.Character;
-
 public abstract class Monster extends Character {
-    public Monster(Integer hp, Integer power) {
+    private Integer exp;
+    public Monster(Integer hp, Integer power, Integer exp) {
         super(hp, power);
+        this.exp = exp;
+    }
+
+    public void giveExp(Player player) {
+        player.plusExp(exp);
     }
 }
