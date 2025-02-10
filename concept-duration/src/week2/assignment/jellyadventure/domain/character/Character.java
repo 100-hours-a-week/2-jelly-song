@@ -1,9 +1,9 @@
 package week2.assignment.jellyadventure.domain.character;
 
 public abstract class Character {
-    protected Integer maxHp;
-    protected Integer hp;
-    protected Integer power;
+    private Integer maxHp;
+    private Integer hp;
+    private Integer power;
 
     public Character(Integer hp, Integer power) {
         this.maxHp = hp;
@@ -34,4 +34,23 @@ public abstract class Character {
                 " HP:" + hp + " POWER:" + power);
     }
 
+    public void plusPower(Integer power) {
+        this.power += power;
+    }
+
+    public void getFullHp() {
+        this.hp = maxHp;
+    }
+
+    public Integer getMaxHp() {
+        return maxHp;
+    }
+
+    public Integer getHp() {
+        return hp;
+    }
+
+    public Integer getPower() {
+        return power;
+    }
 }
