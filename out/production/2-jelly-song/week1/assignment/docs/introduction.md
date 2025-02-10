@@ -17,7 +17,7 @@
 
 
 ### 클래스 다이어그램
-<img src="https://github.com/user-attachments/assets/2730ceed-7e72-448f-bc1c-dfaf56b4fd6f" width="400">
+![img.png](images/img.png)
 
 #### 실행 화면
 <img width="555" alt="image" src="https://github.com/user-attachments/assets/6f63c3e9-c454-488f-a71d-2b3c9e911e7b" />

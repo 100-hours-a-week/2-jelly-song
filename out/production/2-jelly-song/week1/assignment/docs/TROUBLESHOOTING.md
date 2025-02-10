@@ -64,8 +64,4 @@ From https://github.com/100-hours-a-week/2-jelly-song
 #### 추가
 - git pull을 할 때 로컬에 unstaged 상태의 변경사항이 있어서 git pull --rebase가 먹히지 않는 현상이 발생했다.
 - 그 변경 사항을 따로 빼놓은 뒤 pull 하여 해결하였다.
-<<<<<<< HEAD:concept-duration/src/week1/assignment/jellyadventure/TROUBLESHOOTING.md
 - 따로 빼는 방법은 stash를 사용하면 된다.
-=======
-- 따로 빼는 방법은 stash를 사용하면 된다.
->>>>>>> af0df91 (refactor: 피드백 반영):out/production/2-jelly-song/week1/assignment/docs/TROUBLESHOOTING.md
