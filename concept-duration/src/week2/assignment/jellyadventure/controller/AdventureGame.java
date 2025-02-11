@@ -64,7 +64,7 @@ public class AdventureGame {
     }
 
     private void battle(MainMenu mainMenu) {
-        Monster curMonster = MainMenu.changeToMonster(mainMenu); // 변경 요망
+        Monster curMonster = MainMenu.changeToMonster(mainMenu);
 
         while (player.isAlive() && curMonster.isAlive()) {
             battleEachOther(player, curMonster);
