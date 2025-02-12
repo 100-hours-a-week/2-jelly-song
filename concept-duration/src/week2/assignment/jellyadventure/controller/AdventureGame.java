@@ -31,12 +31,14 @@ public class AdventureGame {
         printEndDescription();
     }
 
-    private void startTimeChecker() {
+    private Thread startTimeChecker() {
         ContinuousTimeChecker continuousTimeChecker = new ContinuousTimeChecker();
         Thread timeThread = new Thread(continuousTimeChecker, "timeThread");
         timeThread.setDaemon(true);
         timeThread.start();
         sleep(10L);
+
+        return timeThread;
     }
 
     private boolean isNoBattleMenu(MainMenu mainMenu) {
