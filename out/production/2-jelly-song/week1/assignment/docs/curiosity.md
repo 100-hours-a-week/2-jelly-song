@@ -1,1 +1,0 @@
-1. git commit 단위

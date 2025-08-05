@@ -2,68 +2,29 @@
 
 > 카카오테크 부트캠프 2기 풀스택 과정을 통한 백엔드 개발자 성장 기록
 
-## 📚 프로젝트 소개
+## 📚 소개
 
-이 저장소는 카카오테크 부트캠프 2기 과정에서의 학습 내용과 성장 과정을 기록한 개인 학습 저장소입니다. 
+이 저장소는 카카오테크 부트캠프 2기 과정에서의 학습 내용과 성장 과정을 기록한 개인 학습 저장소입니다.
 백엔드 개발자로의 전문성을 쌓아가는 여정을 담고 있습니다.
 
-## 🗂️ 저장소 구조
+## 링크
 
-```
-2-jelly-song/
-├── concept-duration/
-│   └── src/
-│       ├── til/                    # Today I Learned 기록
-│       │   ├── week1/ ~ week23/    # 주차별 학습 기록
-│       │   └── images/             # 학습 관련 이미지
-│       ├── week1/ ~ week3/         # 초기 학습 자료
-│       └── lecture.md              # 강의 노트
-└── README.md
-```
+#### [TIL link](https://github.com/100-hours-a-week/2-jelly-song/tree/main/til)
 
-## 📖 TIL (Today I Learned)
+#### [1차 토이 자바 프로젝트 link](https://github.com/100-hours-a-week/2-jelly-song/tree/main/project/src/week1/assignment)
 
-매일의 학습 내용과 성장 과정을 기록합니다. 단순한 학습 내용뿐만 아니라 깊이 있는 기술적 고민과 
-문제 해결 과정을 포함하고 있습니다.
+-> 프로젝트 관련 블로그 글 : https://aole.tistory.com/21
 
-**[📝 TIL 바로가기](./concept-duration/src/til/)**
+#### [2차 토이 자바 프로젝트 link](https://github.com/100-hours-a-week/2-jelly-song/tree/main/project/src/week2/assignment)
 
-### 최근 학습 주제들
-- **테스트 코드 작성**: WebClient Mocking, 단위 테스트 설계
-- **리팩토링**: SRP 원칙을 지킨 클래스 분리, 상수 관리
-- **에러 처리**: WebClient 에러 핸들링, DLQ 적용
+-> 프로젝트 관련 블로그 글 : https://aole.tistory.com/23
 
-## 🎯 현재 진행 중인 프로젝트
+----
 
-### 채팅 시스템 (Chat Consumer Service)
-- **기술 스택**: Spring Boot, Kafka, Redis, MySQL, WebClient
-- **주요 기능**: 실시간 채팅 메시지 처리, 알림 시스템
-- **학습 포인트**: 
-  - 마이크로서비스 아키텍처 설계
-  - 이벤트 드리븐 아키텍처 구현
-  - 테스트 코드 작성 및 리팩토링
+## 본격적으로 진행한 메인 프로젝트에 대해서는 밑에 있는 링크를 참고해주세요!
 
-## 📈 성장 지표
+[스펙랭킹 팀 프로젝트 - 메인 BE 서버](https://github.com/100-hours-a-week/19-Respec-BE/tree/main)
 
-### 학습 연속성
-- **23주차** 지속적인 TIL 작성
-- **매일** 9시간 이상의 학습 시간
-- **지속적인** 코드 리뷰 및 피드백 반영
+[스펙랭킹 팀 프로젝트 - 챗 릴레이 BE 서버](https://github.com/100-hours-a-week/19-Respec-BE-Chatconsumer)
 
-### 기술적 성장
-- 단순 기능 구현 → **아키텍처 설계** 고민
-- 동작하는 코드 → **테스트 가능한 코드** 작성
-- 개별 기능 → **전체 시스템** 관점의 사고
-
-## 🎓 카카오테크 부트캠프 2기
-
-**기간**: 2025년 1월 ~ 현재 진행 중  
-**목표**: 실무 중심의 풀스택 개발 역량 구축  
-**성과**: 
-- 체계적인 백엔드 아키텍처 설계 경험
-- 실제 프로덕션 환경을 고려한 개발 프로세스 학습
-- 코드 품질 향상을 위한 테스트 주도 개발 실천
-
----
-
-*"매일 조금씩, 꾸준히 성장하는 백엔드 개발자가 되기 위해 노력하고 있습니다."*
+[DevTalk 개인 프로젝트](https://github.com/100-hours-a-week/2-jelly-song-community)

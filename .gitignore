@@ -1,0 +1,24 @@
+# IntelliJ
+.idea/
+*.iml
+out/
+*/.idea/
+*/out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+/build/
+target/
+.gradle/
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# VSCode (optional)
+.vscode/
